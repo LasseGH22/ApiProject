@@ -15,7 +15,7 @@ public class ReadingController {
     }
 
     @GetMapping()
-    public Reading putBtcData() {
+    public Reading getLatestBtcData() {
         return readingService.getLatest();
     }
 

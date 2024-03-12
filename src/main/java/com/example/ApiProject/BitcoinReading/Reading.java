@@ -1,17 +1,17 @@
 package com.example.ApiProject.BitcoinReading;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("btc_readings")
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Reading {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String dateTime;
     private String name;

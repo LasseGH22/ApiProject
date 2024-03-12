@@ -1,13 +1,10 @@
 package com.example.ApiProject.BitcoinReading;
 
-import org.bson.types.ObjectId;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
-public interface ReadingRepository extends MongoRepository<Reading, Long> {
+public interface ReadingRepository extends JpaRepository<Reading, Long> {
 
     Reading findFirstByOrderByIdDesc();
 }

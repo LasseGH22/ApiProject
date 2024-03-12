@@ -6,18 +6,21 @@ import com.example.ApiProject.BitcoinReading.ReadingService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.concurrent.TimeUnit;
 @Service
+@EnableScheduling
 public class ConnectionService {
 
     private final RestTemplate restTemplate;
     private final ReadingService readingService;
 
-    @Autowired
     public ConnectionService(RestTemplate restTemplate, ReadingService readingService) {
         this.restTemplate = restTemplate;
         this.readingService = readingService;
@@ -25,8 +28,9 @@ public class ConnectionService {
 
     private final String Api_Url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
-    @Scheduled()
+    @Scheduled(fixedDelay = 5,timeUnit = TimeUnit.MINUTES)
     public void fetchBtcData() {
+        System.out.println("gemt");
         String ApiResponse = restTemplate.getForObject(Api_Url,String.class);
         ObjectMapper mapper = new ObjectMapper();
         try {
