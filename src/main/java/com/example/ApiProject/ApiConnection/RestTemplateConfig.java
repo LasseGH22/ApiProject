@@ -1,4 +1,4 @@
-package com.example.ApiProject.BitcoinReading;
+package com.example.ApiProject.ApiConnection;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

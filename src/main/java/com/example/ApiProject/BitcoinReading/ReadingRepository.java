@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ReadingRepository extends MongoRepository<Reading, ObjectId> {
+public interface ReadingRepository extends MongoRepository<Reading, Long> {
 
-
+    Reading findFirstByOrderByIdDesc();
 }

@@ -1,9 +1,8 @@
 package com.example.ApiProject.BitcoinReading;
 
+import com.example.ApiProject.ApiConnection.ConnectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/reading")
@@ -17,11 +16,7 @@ public class ReadingController {
 
     @GetMapping()
     public Reading putBtcData() {
-        return readingService.fetchBtcData();
+        return readingService.getLatest();
     }
 
-    @PostMapping
-    public String save(@RequestBody Reading reading) {
-        return readingService.save(reading);
-    }
 }
