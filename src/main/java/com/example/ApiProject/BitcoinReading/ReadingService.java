@@ -1,5 +1,4 @@
 package com.example.ApiProject.BitcoinReading;
-
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
