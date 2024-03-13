@@ -9,11 +9,10 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    background-color: black;
+    background-color: #242b36;
 }
 
 div {
-    border: 2px solid black;
     color: white;
 }
 

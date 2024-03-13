@@ -11,9 +11,9 @@
     text-align: center;
 }
 
-.currentPrice table {
+.priceTableContainer {
     border: 2px solid white;
-
+    border-radius: 25px;
 }
 
 h1 {
