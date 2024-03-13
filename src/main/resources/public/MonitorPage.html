@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="MonitorTopStyle.css">
     <link rel="stylesheet" href="MonitorBottomStyle.css">
 
-
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-    <script src="MonitorPageJS.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+    <script src="WebsocketConnection.js"></script>
 </head>
 <body>
     <div class="Top">
@@ -42,9 +43,7 @@
         </div>
     </div>
     <div class="Bottom">
-        <div class="graph">
-            hello
-        </div>
+        <canvas id="graph" class="graph"></canvas>
     </div>
 </body>
 </html>
