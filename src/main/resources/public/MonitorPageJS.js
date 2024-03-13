@@ -1,28 +1,28 @@
 
 var stompClient = null;
 function connectWebSocket() {
-    var socket = new SockJS('/data');
+    var socket = new SockJS('/wss');
     stompClient = Stomp.over(socket);
 
-    stompClient.connect({},function (frame) {
+    stompClient.connect({}, function () {
         stompClient.subscribe('/topic/latest', function (message) {
-            console.log(message);
             var data = JSON.parse(message.body);
             console.log(data);
             document.getElementById("symbol").textContent = data.name;
-            document.getElementById("usd").innerText = data.priceUSD;
-            document.getElementById("gbp").innerText = data.priceGBP;
-            document.getElementById("eur").innerText = data.priceEUR;
+            document.getElementById("usd").innerText = data.priceUSD + "$";
+            document.getElementById("gbp").innerText = data.priceGBP + "£";
+            document.getElementById("eur").innerText = data.priceEUR + "€";
             document.getElementById("date").innerText = data.dateTime;
         });
-    }, function (error) {
-        console.log('STOMP error', error);
     });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     connectWebSocket();
 });
+
+
+
 
 
 /*
