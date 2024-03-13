@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="MonitorStyle.css">
     <link rel="stylesheet" href="MonitorTopStyle.css">
     <link rel="stylesheet" href="MonitorBottomStyle.css">
+
+
+
+    <!--<script src="/webjars/jquery/jquery,min,js"></script> -->
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="MonitorPageJS.js"></script>
 </head>
 <body>
     <div class="Top">
@@ -25,11 +32,11 @@
                 
                 <tbody>
                     <tr>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
+                        <td id="symbol"></td>
+                        <td id="usd"></td>
+                        <td id="gbp"></td>
+                        <td id="eur"></td>
+                        <td id="date"></td>
                     </tr>
                 </tbody>
             </table>
