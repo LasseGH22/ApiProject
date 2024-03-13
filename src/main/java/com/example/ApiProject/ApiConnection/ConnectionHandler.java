@@ -28,7 +28,7 @@ public class ConnectionHandler {
 
     private final String Api_Url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
-    @Scheduled(fixedDelay = 5,timeUnit = TimeUnit.SECONDS)
+    @Scheduled(fixedDelay = 30,timeUnit = TimeUnit.SECONDS)
     public void fetchBtcData() {
         String ApiResponse = restTemplate.getForObject(Api_Url,String.class);
         ObjectMapper mapper = new ObjectMapper();

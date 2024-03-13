@@ -2,6 +2,8 @@ package com.example.ApiProject.BitcoinReading;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ReadingService {
 
@@ -18,5 +20,9 @@ public class ReadingService {
 
     public Reading getLatest() {
         return readingRepository.findFirstByOrderByIdDesc();
+    }
+
+    public List<Reading> findAll() {
+        return readingRepository.findAll();
     }
 }
