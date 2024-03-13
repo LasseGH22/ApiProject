@@ -1,0 +1,30 @@
+.Top {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+
+
+    width: fit-content;
+}
+
+.currentPrice {
+    text-align: center;
+}
+
+.currentPrice table {
+    border: 2px solid white;
+
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+th, td {
+    padding: 30px 50px;
+}
+
+td {
+    text-align: center;
+}
