@@ -19,6 +19,7 @@
 h1 {
     font-size: 50px;
     font-weight: bold;
+    margin-top: 0;
 }
 
 th, td {
