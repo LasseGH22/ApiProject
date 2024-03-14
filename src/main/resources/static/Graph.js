@@ -1,8 +1,6 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    connectWebSocket();
-
     var selector = document.getElementById("selector");
+    getGraph(selector.value);
 
     selector.addEventListener("change", function () {
         console.log(selector.value);
@@ -10,31 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })
 });
 
-
-var stompClient = null;
-function connectWebSocket() {
-    var socket = new SockJS('/wss');
-    stompClient = Stomp.over(socket);
-
-    stompClient.connect({}, function () {
-        updateCurrentPrice();
-    });
-}
-
-
-function updateCurrentPrice() {
-    stompClient.subscribe('/topic/latest', function (message) {
-        var data = JSON.parse(message.body);
-        console.log(data);
-        document.getElementById("symbol").textContent = data.name;
-        document.getElementById("usd").innerText = data.priceUSD + "$";
-        document.getElementById("gbp").innerText = data.priceGBP + "£";
-        document.getElementById("eur").innerText = data.priceEUR + "€";
-        document.getElementById("date").innerText = data.dateTime;
-    });
-}
-
-/*
 var bitcoinChart = null;
 async function getGraph(currency) {
     await fetch("http://localhost:8080/api/v1/reading/readings")
@@ -112,6 +85,3 @@ function drawGraph(currency,labels,prices,backgroundColor,borderColor) {
     }
     bitcoinChart = new Chart(graphBox, config);
 }
-
- */
-

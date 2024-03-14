@@ -1,19 +1,13 @@
 .Top {
-    display: flex;
-    flex-direction: column;
     margin: 0 0 35px 0;
-
-
-    width: fit-content;
 }
 
 .currentPrice {
     text-align: center;
 }
 
-.priceTableContainer {
-    border: 2px solid white;
-    border-radius: 25px;
+.bottomPrice {
+    position: relative;
 }
 
 h1 {
@@ -22,10 +16,24 @@ h1 {
     margin-top: 0;
 }
 
+.priceTableContainer {
+    border: 2px solid white;
+    border-radius: 25px;
+    display: flex;
+}
+
 th, td {
-    padding: 30px 50px;
+    padding: 10px 50px;
 }
 
 td {
     text-align: center;
+}
+
+.selectContainer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: -100px;
 }

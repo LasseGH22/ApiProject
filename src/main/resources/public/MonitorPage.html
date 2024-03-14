@@ -3,23 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="./MonitorStyle.css?version=1">
-    <link rel="stylesheet" type="text/css" href="./MonitorTopStyle.css?version=1">
-    <link rel="stylesheet" type="text/css" href="./MonitorBottomStyle.css?version=1">
+    <link rel="stylesheet" type="text/css" href="./MonitorStyle.css?version=2">
+    <link rel="stylesheet" type="text/css" href="./MonitorTopStyle.css?version=2">
+    <link rel="stylesheet" type="text/css" href="./MonitorBottomStyle.css?version=2">
 
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
     <script src="/webjars/stomp-websocket/stomp.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-    <script src="./WebsocketConnection.js"></script>
+    <script src="./WebsocketConnection.js?version=1"></script>
+    <script src="./Graph.js?version=1"></script>
 </head>
 <body>
     <div class="Top">
         <div class="currentPrice">
             <h1>Current Price</h1>
-            <div class="priceTableContainer">
-                <table>
-                    <thead>
+            <div class="bottomPrice">
+                <div class="priceTableContainer">
+                    <table>
+                        <thead>
                         <tr>
                             <th>Symbol</th>
                             <th>USD</th>
@@ -27,9 +29,9 @@
                             <th>EUR</th>
                             <th>Date</th>
                         </tr>
-                    </thead>
+                        </thead>
 
-                    <tbody>
+                        <tbody>
                         <tr>
                             <td id="symbol"></td>
                             <td id="usd"></td>
@@ -37,8 +39,17 @@
                             <td id="eur"></td>
                             <td id="date"></td>
                         </tr>
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="selectContainer">
+                    <label for="selector">Displayed Currency:</label>
+                    <select class="selector" name="currency" id="selector">
+                        <option value="USD">USD</option>
+                        <option value="GBP">GBP</option>
+                        <option value="EUR">EUR</option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>

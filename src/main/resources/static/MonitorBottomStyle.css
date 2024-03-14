@@ -1,6 +1,8 @@
 .Bottom {
     width: 70vw;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .graphContainer {
