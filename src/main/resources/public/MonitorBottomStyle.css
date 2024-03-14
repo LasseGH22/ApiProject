@@ -1,13 +1,11 @@
 .Bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: fit-content;
+    width: 75vw;
 }
 
-.graph {
+.graphContainer {
+    display: flex;
+    justify-content: center;
     border: 2px solid white;
     width: 100%;
-    height: auto;
-    aspect-ratio: 2 / 1;
+    height: 100%;
 }
