@@ -26,10 +26,6 @@ public class ReadingService {
         return readingRepository.findFirstByOrderByIdDesc();
     }
 
-    public List<Reading> findAll() {
-        return readingRepository.findAll();
-    }
-
     public List<Reading> findTop40Reversed() {
         PageRequest pageRequest = PageRequest.of(0,40);
         List<Reading> entries = new ArrayList<>(readingRepository.findAllByOrderByIdDesc(pageRequest).getContent());

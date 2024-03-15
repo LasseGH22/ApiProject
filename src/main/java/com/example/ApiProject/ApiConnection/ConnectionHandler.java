@@ -52,9 +52,7 @@ public class ConnectionHandler {
 
             webSocketService.sendTop40Reversed();
 
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
+        } catch (JsonProcessingException | ParseException e) {
             throw new RuntimeException(e);
         }
     }
