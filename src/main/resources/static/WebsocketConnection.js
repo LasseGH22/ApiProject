@@ -1,12 +1,5 @@
 
-// Runs when the DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-    updateOnLaunch();
-    connectWebSocket();
-});
 
-
-// Connects to the websocket for concurrent price updates
 var stompClient = null;
 function connectWebSocket() {
     var socket = new SockJS('/wss');
@@ -14,6 +7,7 @@ function connectWebSocket() {
 
     stompClient.connect({}, function () {
         updateCurrentPrice();
+        updateGraph();
     });
 }
 
@@ -25,13 +19,12 @@ function updateCurrentPrice() {
     });
 }
 
-// Fetches the latest reading from a Java Spring endpoint for quick loading in gui
-function updateOnLaunch() {
-    fetch("http://localhost:8080/api/v1/reading/latest")
-        .then(response => response.json())
-        .then(data => {
-            insertData(data);
-        })
+function updateGraph() {
+    stompClient.subscribe('/topic/top40Reversed', function (message) {
+        var data = JSON.parse(message.body)
+        selector = document.getElementById("selector");
+        drawGraph(data,selector.value);
+    })
 }
 
 // Method for inserting data

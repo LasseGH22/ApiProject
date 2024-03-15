@@ -49,6 +49,9 @@ public class ConnectionHandler {
             Reading reading = new Reading(dates[0], dates[1], dates[2], dates[3], name, priceUSD, priceGBP, priceEUR);
             readingService.saveReading(reading);
             webSocketService.sendLatest(reading);
+
+            webSocketService.sendTop40Reversed();
+
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         } catch (ParseException e) {
