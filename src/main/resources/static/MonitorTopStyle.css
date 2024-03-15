@@ -35,5 +35,20 @@ td {
     flex-direction: column;
     position: absolute;
     top: 0;
-    right: -100px;
+    right: -150px;
+    align-items: center;
+}
+
+.selector {
+    width: fit-content;
+    margin-top: 5px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    color: white;
+}
+
+.selector option {
+    background-color: #242b36;
 }

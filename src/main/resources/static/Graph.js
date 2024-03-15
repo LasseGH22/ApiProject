@@ -1,7 +1,11 @@
+// Runs when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function () {
     var selector = document.getElementById("selector");
+
+    // Creates the initial graph upon launch
     getGraph(selector.value);
 
+    // Creates graphs based on the selected elements from the selector
     selector.addEventListener("change", function () {
         console.log(selector.value);
         getGraph(selector.value);
@@ -38,7 +42,7 @@ async function getGraph(currency) {
 }
 
 function drawGraph(currency,labels,prices,backgroundColor,borderColor) {
-    const config = {
+    const graph = {
         type: 'line',
         data: {
             labels: labels,
@@ -83,5 +87,5 @@ function drawGraph(currency,labels,prices,backgroundColor,borderColor) {
     if (bitcoinChart) {
         bitcoinChart.destroy();
     }
-    bitcoinChart = new Chart(graphBox, config);
+    bitcoinChart = new Chart(graphBox, graph);
 }
