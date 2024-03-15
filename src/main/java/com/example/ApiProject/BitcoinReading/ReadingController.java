@@ -20,8 +20,8 @@ public class ReadingController {
         return readingService.getLatest();
     }
 
-    @GetMapping("readings")
+    @GetMapping("top40")
     public List<Reading> getReadings() {
-        return readingService.findAll();
+        return readingService.findTop40Reversed();
     }
 }

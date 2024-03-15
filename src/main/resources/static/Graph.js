@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var bitcoinChart = null;
 async function getGraph(currency) {
-    await fetch("http://localhost:8080/api/v1/reading/readings")
+    await fetch("http://localhost:8080/api/v1/reading/top40")
         .then(response => response.json())
         .then(data => {
 
