@@ -32,4 +32,18 @@ public class Reading {
         this.priceGBP = priceGBP;
         this.priceEUR = priceEUR;
     }
+
+    @Override
+    public String toString() {
+        return "Reading{" +
+                "dateMonth='" + dateMonth + '\'' +
+                ", dateDay='" + dateDay + '\'' +
+                ", dateYear='" + dateYear + '\'' +
+                ", dateTime='" + dateTime + '\'' +
+                ", name='" + name + '\'' +
+                ", priceUSD=" + priceUSD +
+                ", priceGBP=" + priceGBP +
+                ", priceEUR=" + priceEUR +
+                '}';
+    }
 }
